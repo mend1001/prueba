@@ -2,7 +2,7 @@ import { pool } from "../db.js";
 
 export const getVehicles = async (req, res) => {
   try {
-    const [rows] = await pool.query('SELECT * FROM t_vehiculo ');
+    const [rows] = await pool.query('SELECT * FROM t_vehiculo');
     res.json(rows);
   } catch (error) {
     return res.status(500).json({ message: "Something goes wrong" });
@@ -12,7 +12,7 @@ export const getVehicles = async (req, res) => {
 export const getVehicle = async (req, res) => {
   try {
     const { vehid } = req.params;
-    const [rows] = await pool.query('SELECT * FROM t_vehiculo  WHERE veh.vehid = ? ', [
+    const [rows] = await pool.query('SELECT * FROM t_vehiculo WHERE veh.vehid = ? ', [
       vehid,
     ]);
 
