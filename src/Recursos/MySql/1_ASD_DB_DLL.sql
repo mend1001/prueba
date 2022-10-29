@@ -1,111 +1,77 @@
-- -----------------------------------------------------
--- Schema ASD_PRUEBA
--- -----------------------------------------------------
 
--- -----------------------------------------------------
--- Schema ASD_PRUEBA
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `ASD_PRUEBA` DEFAULT CHARACTER SET utf8 ;
-USE `ASD_PRUEBA` ;
+DROP TABLE  t_mutantes ;
 
--- -----------------------------------------------------
--- Table `ASD_PRUEBA`.`t_mutantes`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ASD_PRUEBA`.`t_mutantes` ;
-
-CREATE TABLE IF NOT EXISTS `ASD_PRUEBA`.`t_mutantes` (
-  `mutid` INT NOT NULL AUTO_INCREMENT,
-  `mutnom` VARCHAR(70) NOT NULL,
-  `mutapodo` VARCHAR(70) NOT NULL,
-  `mutactivo` TINYINT NOT NULL,
-  `conid` INT NOT NULL,
-  `rolid` INT NOT NULL,
-  `vehid` INT NULL,
-  `paiid` INT NULL,
-  `podmutid` INT NOT NULL,
-  `mutimg` VARCHAR(50) NULL,
-  PRIMARY KEY (`mutid`))
-ENGINE = InnoDB;
+CREATE TABLE   t_mutantes (
+  mutid SERIAL,
+  mutnom VARCHAR(100) ,
+  mutapodo VARCHAR(100) ,
+  mutactivo TINYINT ,
+  conid INT ,
+  rolid INT ,
+  vehid INT ,
+  paiid INT ,
+  podmutid INT ,
+  mutimg VARCHAR(700) ,
+  PRIMARY KEY (mutid))
+;
 
 
--- -----------------------------------------------------
--- Table `ASD_PRUEBA`.`t_rol`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ASD_PRUEBA`.`t_rol` ;
+DROP TABLE  t_rol ;
 
-CREATE TABLE IF NOT EXISTS `ASD_PRUEBA`.`t_rol` (
-  `rolid` INT NOT NULL AUTO_INCREMENT,
-  `rolafinidad` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`rolid`))
-ENGINE = InnoDB;
+CREATE TABLE   t_rol (
+  rolid SERIAL,
+  rolafinidad VARCHAR(45) ,
+  PRIMARY KEY (rolid))
+;
 
+DROP TABLE  t_poder ;
 
--- -----------------------------------------------------
--- Table `ASD_PRUEBA`.`t_poder`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ASD_PRUEBA`.`t_poder` ;
-
-CREATE TABLE IF NOT EXISTS `ASD_PRUEBA`.`t_poder` (
-  `podid` INT NOT NULL AUTO_INCREMENT,
-  `podtipo` VARCHAR(45) NOT NULL,
-  `poddescripcion` VARCHAR(600) NULL,
-  PRIMARY KEY (`podid`))
-ENGINE = InnoDB;
+CREATE TABLE   t_poder (
+  podid SERIAL,
+  podtipo VARCHAR(200) ,
+  poddescripcion VARCHAR(600) ,
+  PRIMARY KEY (podid))
+;
 
 
--- -----------------------------------------------------
--- Table `ASD_PRUEBA`.`t_vehiculo`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ASD_PRUEBA`.`t_vehiculo` ;
+DROP TABLE  t_vehiculo ;
 
-CREATE TABLE IF NOT EXISTS `ASD_PRUEBA`.`t_vehiculo` (
-  `vehid` INT NOT NULL AUTO_INCREMENT,
-  `vehnom` VARCHAR(45) NOT NULL,
-  `vehdescripcion` VARCHAR(250) NOT NULL,
-  `vehcodigo` VARCHAR(3) NOT NULL,
-  PRIMARY KEY (`vehid`))
-ENGINE = InnoDB;
+CREATE TABLE   t_vehiculo (
+  vehid SERIAL,
+  vehnom VARCHAR(45) ,
+  vehdescripcion VARCHAR(700) ,
+  vehcodigo VARCHAR(3) ,
+  vehimg VARCHAR(700),
+  vehactivo INT,
+  PRIMARY KEY (vehid))
+;
 
+DROP TABLE  t_condicion ;
 
--- -----------------------------------------------------
--- Table `ASD_PRUEBA`.`t_condicion`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ASD_PRUEBA`.`t_condicion` ;
-
-CREATE TABLE IF NOT EXISTS `ASD_PRUEBA`.`t_condicion` (
-  `conid` INT NOT NULL AUTO_INCREMENT,
-  `connom` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`conid`))
-ENGINE = InnoDB;
+CREATE TABLE   t_condicion (
+  conid SERIAL,
+  connom VARCHAR(45) ,
+  PRIMARY KEY (conid))
+;
 
 
--- -----------------------------------------------------
--- Table `ASD_PRUEBA`.`t_pais`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ASD_PRUEBA`.`t_pais` ;
+DROP TABLE  t_pais ;
 
-CREATE TABLE IF NOT EXISTS `ASD_PRUEBA`.`t_pais` (
-  `paiid` INT NOT NULL AUTO_INCREMENT,
-  `paicod` VARCHAR(2) NOT NULL,
-  `painom` VARCHAR(45) NULL,
-  PRIMARY KEY (`paiid`))
-ENGINE = InnoDB;
+CREATE TABLE   t_pais (
+  paiid SERIAL ,
+  paicod VARCHAR(2) ,
+  painom VARCHAR(200) ,
+  PRIMARY KEY (paiid))
+;
 
 
--- -----------------------------------------------------
--- Table `ASD_PRUEBA`.`t_poder_mutante`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ASD_PRUEBA`.`t_poder_mutante` ;
+DROP TABLE  t_poder_mutante ;
 
-CREATE TABLE IF NOT EXISTS `ASD_PRUEBA`.`t_poder_mutante` (
-  `podmutid` INT NOT NULL AUTO_INCREMENT,
-  `podid` INT(11) NOT NULL,
-  `mutid` INT(11) NOT NULL,
-  PRIMARY KEY (`podmutid`))
-ENGINE = InnoDB;
+CREATE TABLE   t_poder_mutante (
+  podmutid SERIAL,
+  podid INT(11) ,
+  mutid INT(11) ,
+  PRIMARY KEY (podmutid))
+;
 
-ALTER TABLE `asd_prueba`.`t_vehiculo` 
-ADD COLUMN `vehimg` `vehimg` VARCHAR(700) NULL DEFAULT NULL ;
 
-ALTER TABLE `asd_prueba`.`t_vehiculo` 
-ADD COLUMN `vehactivo` TINYINT NOT NULL AFTER `vehimg`
