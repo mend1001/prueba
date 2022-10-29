@@ -62,7 +62,7 @@ export const updateCountry = async (req, res) => {
     const { paicod, painom } = req.body;
 
     const [result] = await pool.query(
-      "UPDATE t_pais SET painom = IFNULL(?, painom), paicod = IFNULL(?, paicod) WHERE paiid = ?",
+      "UPDATE t_pais SET paicod = IFNULL(?, paicod), painom = IFNULL(?, painom) WHERE paiid = ?",
       [paicod, painom, paiid]
     );
 
