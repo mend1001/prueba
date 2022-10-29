@@ -12,7 +12,7 @@ export const getVehicles = async (req, res) => {
 export const getVehicle = async (req, res) => {
   try {
     const { vehid } = req.params;
-    const [rows] = await pool.query('SELECT * FROM t_vehiculo WHERE veh.vehid = ? ', [
+    const [rows] = await pool.query('SELECT * FROM t_vehiculo WHERE veh.vehid = ?', [
       vehid,
     ]);
 
