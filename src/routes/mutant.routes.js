@@ -29,7 +29,7 @@ router.patch("/mutant/:mutid", updateMutant);
 router.delete("/mutant/survived/:mutid", survivedMutant);
 
 // Survived An Mutant
-router.delete("/mutant/survived/:mutid", deadMutant);
+router.delete("/mutant/dead/:mutid", deadMutant);
 
 
 export default router;
