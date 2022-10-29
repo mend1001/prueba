@@ -4,6 +4,7 @@ import indexRoutes from "./routes/index.routes.js";
 import mutantsRoutes from "./routes/mutant.routes.js";
 import vehicleRoutes from "./routes/vehicle.routes.js";
 import powerRoutes from "./routes/power.routes.js";
+import countryRoutes from "./routes/country.routes.js";
 const app = express();
 
 // Middlewares
@@ -15,6 +16,7 @@ app.use("/", indexRoutes);
 app.use("/api", mutantsRoutes);
 app.use("/api", vehicleRoutes);
 app.use("/api", powerRoutes);
+app.use("/api", countryRoutes);
 
 app.use((req, res, next) => {
   res.status(404).json({ message: "Not found" });
