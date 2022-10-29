@@ -62,7 +62,7 @@ export const updateVehicle = async (req, res) => {
     const { vehnom, vehdescripcion, vehcodigo, vehimg, vehactivo} = req.body;
 
     const [result] = await pool.query(
-      "UPDATE t_vehiculo SET vehnom = IFNULL(?, vehnom), vehdescripcion = IFNULL(?, vehdescripcion), vehcodigo = IFNULL(?, vehcodigo),vehimg = IFNULL(?, vehimg),vehactivo = IFNULL(?, vehactivo) WHERE vehid = ?",
+      "UPDATE t_vehiculo SET vehnom = IFNULL(?, vehnom), vehdescripcion = IFNULL(?, vehdescripcion), vehcodigo = IFNULL(?, vehcodigo), vehimg = IFNULL(?, vehimg), vehactivo = IFNULL(?, vehactivo) WHERE vehid = ?",
       [vehnom, vehdescripcion, vehcodigo, vehimg, vehactivo, vehid]
     );
 
