@@ -1,0 +1,392 @@
+{
+	"id": "b5335672-54b6-4b38-93e7-190d18543353",
+	"name": "ASD_test_MutantApp",
+	"timestamp": "2022-10-21T03:31:06.356Z",
+	"collection_id": "0-25091800-7996-4676-bfd2-9d17260199c3",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "a68fd5e8-6265-4ee9-95e2-8e807c1e6a5e",
+			"name": "listMutants",
+			"url": "http://localhost:3000/api/mutant/",
+			"time": 120,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				120
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c1c3987b-bdf4-40d6-bc2a-ab88c9cf4151",
+			"name": "getMutant",
+			"url": "http://localhost:3000/api/mutant/5",
+			"time": 180,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				180
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "52a82d84-e1b2-4eeb-ab88-bf325c440a23",
+			"name": "deleteMutant",
+			"url": "http://localhost:3000/api/mutant/5",
+			"time": 202,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				202
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "62dcb010-24b9-404d-98b1-8e3c157d5cc7",
+			"name": "createMutant",
+			"url": "http://localhost:3000/api/mutant/",
+			"time": 380,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				380
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "69cf6394-bbc9-48be-819d-f617fa06e63b",
+			"name": "editMutant",
+			"url": "http://localhost:3000/api/mutant/1",
+			"time": 157,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				157
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d3c36c9f-b55b-426b-a3e0-d484bec48bb2",
+			"name": "survivedMutant",
+			"url": "http://localhost:3000/api/mutant/survived/2",
+			"time": 307,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				307
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "94c5cb30-cb6c-4e36-9a5c-1830b37c70b9",
+			"name": "listVehicle",
+			"url": "http://localhost:3000/api/vehicle/",
+			"time": 165,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				165
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ef4bdf5e-6795-4478-b22c-3d9e3090142a",
+			"name": "getVehicle",
+			"url": "http://localhost:3000/api/vehicle/5",
+			"time": 143,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				143
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d3c4d2b3-dcfc-44e5-b1bd-37330ebacfe5",
+			"name": "deleteVehicle",
+			"url": "http://localhost:3000/api/vehicle/1",
+			"time": 91,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				91
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c8f930dd-f862-4258-bf3c-1f0b651371d0",
+			"name": "survivedVehicle",
+			"url": "http://localhost:3000/api/vehicle/saved/2",
+			"time": 194,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				194
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "70741b41-4173-4d8f-86dc-5c720b529388",
+			"name": "createVehicle",
+			"url": "http://localhost:3000/api/vehicle/",
+			"time": 330,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				330
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7d160269-e974-4903-a005-2e94e9776e5f",
+			"name": "editVehicle",
+			"url": "http://localhost:3000/api/vehicle/1",
+			"time": 151,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				151
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8a8d03de-f28f-4ee9-acfa-a006426a1a43",
+			"name": "listPower",
+			"url": "http://localhost:3000/api/power/",
+			"time": 163,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				163
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "75c3c173-a201-49b7-b37f-952a77b69cb5",
+			"name": "getPower",
+			"url": "http://localhost:3000/api/power/5",
+			"time": 222,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				222
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2aa86408-0cea-4498-94d5-220e65e8ce88",
+			"name": "deletePowers",
+			"url": "http://localhost:3000/api/power/8",
+			"time": 263,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				263
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "36cb244b-b28a-4acb-9aeb-43da49a33e4c",
+			"name": "createPowerByMutant",
+			"url": "http://localhost:3000/api/power/",
+			"time": 371,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				371
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7c439ae7-886e-467f-ac02-1025384e7b61",
+			"name": "listCountry",
+			"url": "http://localhost:3000/api/country/",
+			"time": 110,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				110
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3549,
+	"collection": {
+		"requests": [
+			{
+				"id": "a68fd5e8-6265-4ee9-95e2-8e807c1e6a5e",
+				"method": "GET"
+			},
+			{
+				"id": "c1c3987b-bdf4-40d6-bc2a-ab88c9cf4151",
+				"method": "GET"
+			},
+			{
+				"id": "52a82d84-e1b2-4eeb-ab88-bf325c440a23",
+				"method": "DELETE"
+			},
+			{
+				"id": "62dcb010-24b9-404d-98b1-8e3c157d5cc7",
+				"method": "POST"
+			},
+			{
+				"id": "69cf6394-bbc9-48be-819d-f617fa06e63b",
+				"method": "PUT"
+			},
+			{
+				"id": "d3c36c9f-b55b-426b-a3e0-d484bec48bb2",
+				"method": "DELETE"
+			},
+			{
+				"id": "94c5cb30-cb6c-4e36-9a5c-1830b37c70b9",
+				"method": "GET"
+			},
+			{
+				"id": "ef4bdf5e-6795-4478-b22c-3d9e3090142a",
+				"method": "GET"
+			},
+			{
+				"id": "d3c4d2b3-dcfc-44e5-b1bd-37330ebacfe5",
+				"method": "DELETE"
+			},
+			{
+				"id": "c8f930dd-f862-4258-bf3c-1f0b651371d0",
+				"method": "DELETE"
+			},
+			{
+				"id": "70741b41-4173-4d8f-86dc-5c720b529388",
+				"method": "POST"
+			},
+			{
+				"id": "7d160269-e974-4903-a005-2e94e9776e5f",
+				"method": "PUT"
+			},
+			{
+				"id": "8a8d03de-f28f-4ee9-acfa-a006426a1a43",
+				"method": "GET"
+			},
+			{
+				"id": "75c3c173-a201-49b7-b37f-952a77b69cb5",
+				"method": "GET"
+			},
+			{
+				"id": "2aa86408-0cea-4498-94d5-220e65e8ce88",
+				"method": "DELETE"
+			},
+			{
+				"id": "36cb244b-b28a-4acb-9aeb-43da49a33e4c",
+				"method": "POST"
+			},
+			{
+				"id": "7c439ae7-886e-467f-ac02-1025384e7b61",
+				"method": "GET"
+			}
+		]
+	}
+}
