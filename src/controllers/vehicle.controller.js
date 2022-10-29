@@ -42,7 +42,7 @@ export const deleteVehicle = async (req, res) => {
 };
 
 
-export const createvehicle = async (req, res) => {
+export const createVehicle = async (req, res) => {
   try {
     
     const { vehnom, vehdescripcion, vehcodigo, vehimg, vehactivo } = req.body;
@@ -79,7 +79,7 @@ export const updateVehicle = async (req, res) => {
   }
 };
 
-export const deadvehicle = async (req, res) => {
+export const deadVehicle = async (req, res) => {
     try {
       const { vehid } = req.params;
       const [rows] = await pool.query("UPDATE t_vehiculo SET vehactivo = IFNULL(0, vehactivo) WHERE vehid = ?", [vehid]);
@@ -93,7 +93,7 @@ export const deadvehicle = async (req, res) => {
       return res.status(500).json({ message: "Something goes wrong" });
     }
   };
-  export const survivedvehicle = async (req, res) => {
+  export const survivedVehicle = async (req, res) => {
     try {
       const { vehid } = req.params;
       const [rows] = await pool.query("UPDATE t_vehiculo SET vehactivo = IFNULL(1, vehactivo) WHERE vehid = ?", [vehid]);
