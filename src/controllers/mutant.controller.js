@@ -82,33 +82,29 @@ export const updateMutant = async (req, res) => {
 export const deadMutant = async (req, res) => {
     try {
       const { mutid } = req.params;
-      const [result] = await pool.query(
-        "UPDATE t_mutantes SET mutactivo = IFNULL(0, mutactivo) WHERE mutid = ?",
-        [mutid]
-      );
+      const [rows] = await pool.query("UPDATE t_mutantes SET mutactivo = IFNULL(0, mutactivo) WHERE mutid = ?", [mutid]);
   
-      if (result.affectedRows === 0)
+      if (rows.affectedRows <= 0) {
         return res.status(404).json({ message: "Mutant not found" });
-
-        res.json(rows[0]);
+      }
+  
+      res.sendStatus(204);
     } catch (error) {
       return res.status(500).json({ message: "Something goes wrong" });
     }
   };
-
   export const survivedMutant = async (req, res) => {
     try {
       const { mutid } = req.params;
-      const [result] = await pool.query(
-        "UPDATE t_mutantes SET mutactivo = IFNULL(1, mutactivo) WHERE mutid = ?",
-        [mutid]
-      );
+      const [rows] = await pool.query("UPDATE t_mutantes SET mutactivo = IFNULL(1, mutactivo) WHERE mutid = ?", [mutid]);
   
-      if (result.affectedRows === 0)
+      if (rows.affectedRows <= 0) {
         return res.status(404).json({ message: "Mutant not found" });
-        
-        res.json(rows[0]);
+      }
+  
+      res.sendStatus(204);
     } catch (error) {
       return res.status(500).json({ message: "Something goes wrong" });
     }
   };
+
