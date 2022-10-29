@@ -69,7 +69,7 @@ export const updateVehicle = async (req, res) => {
     if (result.affectedRows === 0)
       return res.status(404).json({ message: "Vehicle not found" });
 
-    const [rows] = await pool.query("SELECT * FROM t_vehiclees WHERE vehid = ?", [
+    const [rows] = await pool.query("SELECT * FROM t_vehiculo WHERE vehid = ?", [
       vehid,
     ]);
 
