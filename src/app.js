@@ -3,7 +3,7 @@ import morgan from "morgan";
 import indexRoutes from "./routes/index.routes.js";
 import mutantsRoutes from "./routes/mutant.routes.js";
 import vehicleRoutes from "./routes/vehicle.routes.js";
-
+import powerRoutes from "./routes/power.routes.js";
 const app = express();
 
 // Middlewares
@@ -14,6 +14,7 @@ app.use(express.json());
 app.use("/", indexRoutes);
 app.use("/api", mutantsRoutes);
 app.use("/api", vehicleRoutes);
+app.use("/api", powerRoutes);
 
 app.use((req, res, next) => {
   res.status(404).json({ message: "Not found" });
