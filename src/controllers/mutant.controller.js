@@ -82,21 +82,15 @@ export const updateMutant = async (req, res) => {
 export const deadMutant = async (req, res) => {
     try {
       const { mutid } = req.params;
-      const { mutactivo } = req.body;
-  
       const [result] = await pool.query(
         "UPDATE t_mutantes SET mutactivo = IFNULL(0, mutactivo) WHERE mutid = ?",
-        [mutactivo, mutid]
+        [mutid]
       );
   
       if (result.affectedRows === 0)
         return res.status(404).json({ message: "Mutant not found" });
-  
-      const [rows] = await pool.query("SELECT * FROM t_mutant WHERE mutid = ?", [
-        mutid,
-      ]);
-  
-      res.json(rows[0]);
+
+        res.json(rows[0]);
     } catch (error) {
       return res.status(500).json({ message: "Something goes wrong" });
     }
@@ -105,21 +99,15 @@ export const deadMutant = async (req, res) => {
   export const survivedMutant = async (req, res) => {
     try {
       const { mutid } = req.params;
-      const { mutactivo } = req.body;
-  
       const [result] = await pool.query(
         "UPDATE t_mutantes SET mutactivo = IFNULL(1, mutactivo) WHERE mutid = ?",
-        [mutactivo, mutid]
+        [mutid]
       );
   
       if (result.affectedRows === 0)
         return res.status(404).json({ message: "Mutant not found" });
-  
-      const [rows] = await pool.query("SELECT * FROM t_mutant WHERE mutid = ?", [
-        mutid,
-      ]);
-  
-      res.json(rows[0]);
+        
+        res.json(rows[0]);
     } catch (error) {
       return res.status(500).json({ message: "Something goes wrong" });
     }
