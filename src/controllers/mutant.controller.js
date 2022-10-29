@@ -86,7 +86,7 @@ export const deadMutant = async (req, res) => {
   
       const [result] = await pool.query(
         "UPDATE t_mutantes SET mutactivo = IFNULL(0, mutactivo) WHERE mutid = ?",
-        [mutnom, mutapodo, mutactivo, conid, rolid, vehid, paiid , mutimg, mutid]
+        [mutactivo, mutid]
       );
   
       if (result.affectedRows === 0)
@@ -109,7 +109,7 @@ export const deadMutant = async (req, res) => {
   
       const [result] = await pool.query(
         "UPDATE t_mutantes SET mutactivo = IFNULL(1, mutactivo) WHERE mutid = ?",
-        [mutnom, mutapodo, mutactivo, conid, rolid, vehid, paiid , mutimg, mutid]
+        [mutactivo, mutid]
       );
   
       if (result.affectedRows === 0)
