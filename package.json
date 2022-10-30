@@ -1,7 +1,7 @@
 {
   "name": "asd-app-mutant-api",
   "version": "1.0.1",
-  "description": "A simple REST API with Node.js, Express and MySQL",
+  "description": "REST api for app",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
