@@ -5,7 +5,7 @@ import mutantsRoutes from "./routes/mutant.routes.js";
 import vehicleRoutes from "./routes/vehicle.routes.js";
 import powerRoutes from "./routes/power.routes.js";
 import countryRoutes from "./routes/country.routes.js";
-
+import cors from "cors"
 
 const app = express();
 
@@ -13,7 +13,7 @@ const app = express();
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json());
-
+app.use(cors());
 // Routes
 app.use("/", indexRoutes);
 app.use("/api", mutantsRoutes);
