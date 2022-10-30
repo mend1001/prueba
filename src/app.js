@@ -8,7 +8,7 @@ import countryRoutes from "./routes/country.routes.js";
 import cors from "cors"
 
 const app = express();
-const whiteLIst = []
+const whiteLIst = ['http://localhost:4200','https://asdappmutantfrontendprod-production.up.railway.app']
 
 // Middlewares
 app.use(morgan("dev"));
