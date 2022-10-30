@@ -45,10 +45,10 @@ export const deletePower = async (req, res) => {
 export const createPower = async (req, res) => {
   try {
     
-    const { podtipo, poddescripcion } = req.body;
+    const { podid, mutid} = req.body;
     const [rows] = await pool.query(
-      "INSERT INTO t_poder (podtipo, poddescripcion) VALUES (?, ?)",
-      [podtipo, poddescripcion]
+      "INSERT INTO t_poder_mutante (podid, mutid) VALUES (?, ?)",
+      [podid, mutid]
     );
     res.status(201).json({ id: rows.insertId, podtipo, poddescripcion});
   } catch (error) {
