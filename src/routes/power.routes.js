@@ -16,7 +16,7 @@ router.get("/power", getPowers);
 router.get("/power/:podid", getPower);
 
 // DELETE An Power
-router.delete("/power/:podid", deletePower);
+router.delete("/power/:mutid", deletePower);
 
 // INSERT An Power
 router.post("/power", createPower);

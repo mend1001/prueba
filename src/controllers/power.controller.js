@@ -28,8 +28,8 @@ export const getPower = async (req, res) => {
 
 export const deletePower = async (req, res) => {
   try {
-    const { podid } = req.params;
-    const [rows] = await pool.query("DELETE FROM t_poder WHERE podid = ?", [podid]);
+    const { mutid } = req.params;
+    const [rows] = await pool.query("DELETE FROM t_poder_mutante WHERE mutid = ?", [mutid]);
 
     if (rows.affectedRows <= 0) {
       return res.status(404).json({ message: "Power not found" });
