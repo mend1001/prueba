@@ -8,12 +8,12 @@ import countryRoutes from "./routes/country.routes.js";
 import cors from "cors"
 
 const app = express();
-
+const whiteLIst = ['https://asdappmutantfrontendprod-production.up.railway.app','http://localhost:4200']
 
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin: whiteLIst}));
 // Routes
 app.use("/", indexRoutes);
 app.use("/api", mutantsRoutes);
