@@ -2,7 +2,7 @@ import { pool } from "../db.js";
 
 export const getPowers = async (req, res) => {
   try {
-    const [rows] = await pool.query('SELECT * FROM t_poder');
+    const [rows] = await pool.query('SELECT * FROM t_poder ORDER BY podtipo ASC');
     res.json(rows);
   } catch (error) {
     return res.status(500).json({ message: "Something goes wrong" });

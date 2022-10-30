@@ -2,7 +2,7 @@ import { pool } from "../db.js";
 
 export const getMutants = async (req, res) => {
   try {
-    const [rows] = await pool.query('SELECT mut.mutid ,mut.mutactivo, mut.mutapodo, mut.mutnom, rol.rolafinidad AS "rolid", CONCAT(veh.vehnom," (",veh.vehcodigo,")") AS "vehid",con.connom AS "conid", CONCAT(pai.painom," (",pai.paicod,")") AS "paiid", GROUP_CONCAT(pod.podtipo) AS "podmutid", mut.mutimg   FROM  t_mutantes AS mut  LEFT JOIN t_rol AS rol ON mut.rolid = rol.rolid  LEFT JOIN t_vehiculo AS veh ON mut.vehid = veh.vehid  LEFT JOIN t_condicion AS con ON mut.conid = con.conid  LEFT JOIN t_pais AS pai ON mut.paiid = pai.paiid  left join  t_poder_mutante AS pmu ON mut.mutid = pmu.mutid left join t_poder AS pod ON pmu.podid = pod.podid GROUP BY mut.mutid ORDER BY mut.mutid ASC ');
+    const [rows] = await pool.query('SELECT mut.mutid ,mut.mutactivo, mut.mutapodo, mut.mutnom, rol.rolafinidad AS "rolid", CONCAT(veh.vehnom," (",veh.vehcodigo,")") AS "vehid",con.connom AS "conid", CONCAT(pai.painom," (",pai.paicod,")") AS "paiid", GROUP_CONCAT(pod.podtipo) AS "podmutid", mut.mutimg   FROM  t_mutantes AS mut  LEFT JOIN t_rol AS rol ON mut.rolid = rol.rolid  LEFT JOIN t_vehiculo AS veh ON mut.vehid = veh.vehid  LEFT JOIN t_condicion AS con ON mut.conid = con.conid  LEFT JOIN t_pais AS pai ON mut.paiid = pai.paiid  LEFT JOIN  t_poder_mutante AS pmu ON mut.mutid = pmu.mutid LEFT JOIN t_poder AS pod ON pmu.podid = pod.podid GROUP BY mut.mutid ORDER BY mut.mutid ASC ');
     res.json(rows);
   } catch (error) {
     return res.status(500).json({ message: "Something goes wrong" });
@@ -12,7 +12,7 @@ export const getMutants = async (req, res) => {
 export const getMutant = async (req, res) => {
   try {
     const { mutid } = req.params;
-    const [rows] = await pool.query('SELECT mut.mutid ,mut.mutactivo, mut.mutapodo, mut.mutnom, rol.rolafinidad AS "rolid", CONCAT(veh.vehnom," (",veh.vehcodigo,")") AS "vehid",con.connom AS "conid", CONCAT(pai.painom," (",pai.paicod,")") AS "paiid", GROUP_CONCAT(pod.podtipo) AS "podmutid", mut.mutimg   FROM  t_mutantes AS mut  LEFT JOIN t_rol AS rol ON mut.rolid = rol.rolid  LEFT JOIN t_vehiculo AS veh ON mut.vehid = veh.vehid  LEFT JOIN t_condicion AS con ON mut.conid = con.conid  LEFT JOIN t_pais AS pai ON mut.paiid = pai.paiid  left join  t_poder_mutante AS pmu ON mut.mutid = pmu.mutid left join t_poder AS pod ON pmu.podid = pod.podid  WHERE mut.mutid = ?   GROUP BY mut.mutid ', [
+    const [rows] = await pool.query('SELECT mut.mutid ,mut.mutactivo, mut.mutapodo, mut.mutnom, rol.rolafinidad AS "rolid", CONCAT(veh.vehnom," (",veh.vehcodigo,")") AS "vehid",con.connom AS "conid", CONCAT(pai.painom," (",pai.paicod,")") AS "paiid", GROUP_CONCAT(pod.podtipo) AS "podmutid", mut.mutimg   FROM  t_mutantes AS mut  LEFT JOIN t_rol AS rol ON mut.rolid = rol.rolid  LEFT JOIN t_vehiculo AS veh ON mut.vehid = veh.vehid  LEFT JOIN t_condicion AS con ON mut.conid = con.conid  LEFT JOIN t_pais AS pai ON mut.paiid = pai.paiid  LEFT JOIN  t_poder_mutante AS pmu ON mut.mutid = pmu.mutid LEFT JOIN t_poder AS pod ON pmu.podid = pod.podid  WHERE mut.mutid = ?   GROUP BY mut.mutid ', [
       mutid,
     ]);
 

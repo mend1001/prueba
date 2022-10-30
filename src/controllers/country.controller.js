@@ -2,7 +2,7 @@ import { pool } from "../db.js";
 
 export const getCountries = async (req, res) => {
   try {
-    const [rows] = await pool.query('SELECT * FROM t_pais');
+    const [rows] = await pool.query('SELECT * FROM t_pais ORDER BY painom ASC');
     res.json(rows);
   } catch (error) {
     return res.status(500).json({ message: "Something goes wrong" });
