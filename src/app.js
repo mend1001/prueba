@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import morgan from "morgan";
 import indexRoutes from "./routes/index.routes.js";
 import mutantsRoutes from "./routes/mutant.routes.js";
