@@ -46,11 +46,14 @@ export const createVehicle = async (req, res) => {
   try {
     
     const { vehnom, vehdescripcion, vehcodigo, vehimg, vehactivo } = req.body;
+    if(vehnom !== "" && vehdescripcion !== ""){
     const [rows] = await pool.query(
       "INSERT INTO t_vehiculo (vehnom, vehdescripcion, vehcodigo, vehimg, vehactivo) VALUES (?, ?, ?, ?, ?)",
       [vehnom, vehdescripcion, vehcodigo, vehimg, vehactivo]
     );
     res.status(201).json({ id: rows.insertId, vehnom, vehdescripcion, vehcodigo, vehimg, vehactivo});
+    }
+    else{res.status(400).json("Check the fields entered in name and description");}
   } catch (error) {
     return res.status(500).json({ message: "Something goes wrong" });
   }

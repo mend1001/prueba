@@ -46,11 +46,14 @@ export const createMutant = async (req, res) => {
   try {
     
     const { mutnom, mutapodo, mutactivo, conid, rolid, vehid, paiid , mutimg} = req.body;
+    if(mutnom !== "" && mutapodo  !== "" && paiid !== ""){
     const [rows] = await pool.query(
       "INSERT INTO t_mutantes (mutnom, mutapodo, mutactivo, conid, rolid, vehid, paiid , mutimg) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
       [mutnom, mutapodo, mutactivo, conid, rolid, vehid, paiid , mutimg]
     );
     res.status(201).json({ id: rows.insertId, mutnom, mutapodo, mutactivo, conid, rolid, vehid, paiid , mutimg });
+  }
+  else{res.status(400).json("check the fields entered in name, alias and country");}
   } catch (error) {
     return res.status(500).json({ message: "Something goes wrong" });
   }
